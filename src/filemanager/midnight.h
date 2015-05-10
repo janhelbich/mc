@@ -46,6 +46,7 @@ void change_panel (void);
 void save_cwds_stat (void);
 gboolean quiet_quit_cmd (void);
 gboolean do_nc (void);
+gboolean print_my_name (void);
 
 /*** inline functions ****************************************************************************/
 

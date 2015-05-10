@@ -331,7 +331,8 @@ enum
     CK_HunkPrev,
     CK_EditOther,
     CK_Merge,
-    CK_MergeOther
+    CK_MergeOther,
+    CK_TestMenu
 };
 
 /*** structures declarations (and typedefs of structures)*****************************************/

@@ -276,6 +276,7 @@ create_command_menu (void)
      */
     GList *entries = NULL;
 
+    entries = g_list_prepend (entries, menu_entry_create (_("&Test"), CK_TestMenu));
     entries = g_list_prepend (entries, menu_entry_create (_("&User menu"), CK_UserMenu));
     entries = g_list_prepend (entries, menu_entry_create (_("&Directory tree"), CK_Tree));
     entries = g_list_prepend (entries, menu_entry_create (_("&Find file"), CK_Find));
@@ -1112,6 +1113,9 @@ midnight_execute_cmd (Widget * sender, unsigned long command)
 
     switch (command)
     {
+    case CK_TestMenu:
+        print_my_name ();
+        break;
     case CK_HotListAdd:
         add2hotlist_cmd ();
         break;
@@ -1793,3 +1797,13 @@ do_nc (void)
 }
 
 /* --------------------------------------------------------------------------------------------- */
+
+gboolean
+print_my_name (void) {
+    query_dialog (_("The Midnight Commander"),
+                  _("Jan Helbich"),
+                  D_NORMAL, 
+                  1, 
+                  _("&OK")); 
+    return 0;
+}
